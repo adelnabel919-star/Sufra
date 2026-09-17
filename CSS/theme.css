@@ -1,0 +1,108 @@
+/* Theme variables and theme-specific overrides */
+body {
+    --page-bg: #160F0B;
+    --surface: rgba(43, 27, 18, 0.9);
+    --surface-strong: #2B1B12;
+    --text-main: #FFF9F0;
+    --text-muted: #D8C6AE;
+    --border-soft: rgba(200, 138, 61, 0.25);
+    --accent: #C88A3D;
+    --accent-2: #E7B765;
+    --shadow: rgba(0, 0, 0, 0.35);
+    --background-glow: rgba(43, 27, 18, 0.9);
+    --hero-overlay: linear-gradient(360deg, rgba(22, 15, 11, 0.92), rgba(22, 15, 11, 0.58) 48%, rgba(22, 15, 11, 0.2));
+    --hero-glow: rgba(200, 138, 61, 0.14);
+    --hero-heading: #FFF9F0;
+    --hero-copy: #D8C6AE;
+    --hero-curve: #F5E6CC;
+    --hero-accent-text: #E7B765;
+    --hero-accent-line: #C88A3D;
+    --stats-bg: #21150E;
+    --stats-card: #21150E;
+    --stats-border: rgba(200, 138, 61, 0.22);
+    --stats-number: #E7B765;
+    --stats-heading: #FFF9F0;
+    --stats-copy: #D8C6AE;
+    --cart-success: #8FAF45;
+}
+
+body.theme-light {
+    --page-bg: #E8D2B0;
+    --surface: rgba(240, 220, 186, 0.94);
+    --surface-strong: #E2C9A3;
+    --text-main: #2B1B12;
+    --text-muted: #6A4932;
+    --border-soft: rgba(112, 69, 31, 0.28);
+    --accent: #C88A3D;
+    --accent-2: #70451F;
+    --shadow: rgba(43, 27, 18, 0.24);
+    --background-glow: rgba(138, 87, 40, 0.2);
+    --hero-overlay: linear-gradient(360deg, rgba(56, 32, 18, 0.68), rgba(245, 230, 204, 0.34) 52%, rgba(245, 230, 204, 0.1));
+    --hero-glow: rgba(200, 138, 61, 0.24);
+    --hero-heading: #2B1B12;
+    --hero-copy: #6A4932;
+    --hero-curve: #E2C9A3;
+    --hero-accent-text: #70451F;
+    --hero-accent-line: #8A5728;
+    --stats-bg: #F5E6CC;
+    --stats-card: #FFFFFF;
+    --stats-border: #E8D7BF;
+    --stats-number: #B8792E;
+    --stats-heading: #2B1B14;
+    --stats-copy: #765E49;
+}
+
+body.theme-light .about-image img:first-child {
+    display: none;
+}
+
+body.theme-light .about-image img+img {
+    display: block;
+}
+
+body.theme-light .signature-section {
+    --signature-bg: #FFF9F0;
+    --signature-text: #2B1B14;
+    --signature-accent: #B8792E;
+}
+
+body:not(.theme-light) .signature-section {
+    --signature-bg: #160F0B;
+    --signature-text: #FFF9F0;
+    --signature-accent: #E7B765;
+}
+
+body:not(.theme-light) .menu-section {
+    --menu-bg: #160F0B;
+    --menu-secondary: #21150E;
+    --menu-card: #2B1B12;
+    --menu-text: #FFF9F0;
+    --menu-muted: #D8C6AE;
+    --menu-accent: #E7B765;
+    --menu-hover: #E7B765;
+    --menu-border: rgba(200, 138, 61, 0.22);
+}
+
+body:not(.theme-light) .popular-section {
+    --popular-bg: #160F0B;
+    --popular-card: #21150E;
+    --popular-text: #FFF9F0;
+    --popular-muted: #D8C6AE;
+    --popular-accent: #E7B765;
+    --popular-border: rgba(200, 138, 61, 0.22);
+}
+
+body:not(.theme-light) .reviews-section,
+body:not(.theme-light) .contact-section,
+body:not(.theme-light) .site-footer {
+    --section-bg: #160F0B;
+    --section-card: #21150E;
+    --section-text: #FFF9F0;
+    --section-muted: #D8C6AE;
+    --section-gold: #E7B765;
+    --section-border: rgba(200, 138, 61, 0.22);
+}
+
+body:not(.theme-light) .map-preview {
+    background: #2b211a;
+}

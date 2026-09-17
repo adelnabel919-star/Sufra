@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#160F0B">
+        <!-- ! Link CSS -->
+        <link rel="stylesheet" href="CSS/normalize.css">
+        <link rel="stylesheet" href="CSS/all.min.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/theme.css">
+        <link rel="stylesheet" href="CSS/responsive.css">
+        <!-- ! Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <!-- !ظهور لوجو الموقع فوق -->
+        <link rel="icon" href="image/logo.png" type="image/logo.png">
+        <!-- ! Name of the website -->
+        <title>سُفرة</title>
+    </head>
+    <body>
+        <!-- ! Header -->
+        <header> 
+            <div class="container">
+                <div class="logo">
+                    <img src="image/logo.png" alt="شعار سُفرة">
+                    <h1 data-ar="سُفرة" data-en="Sufra">سُفرة</h1>
+                </div>
+                <div class="links">
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i><span data-ar="عن المطعم" data-en="About">عن المطعم</span></a></li>
+                        <li><a href="#menu"><i class="fas fa-utensils"></i><span data-ar="المنيو" data-en="Menu">المنيو</span></a></li>
+                        <li><a href="#testimonials"><i class="fas fa-comments"></i><span data-ar="الآراء" data-en="Reviews">الآراء</span></a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i><span data-ar="تواصل معنا" data-en="Contact">تواصل معنا</span></a></li>
+                    </ul>
+                </div>
+                <div class="bottoms">
+                    <button class="control-button" id="theme-toggle" type="button" aria-label="تبديل الوضع" title="تبديل الوضع">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="control-button language-toggle" id="language-toggle" type="button" aria-label="Switch to English" title="Switch language">EN</button>
+                    <button class="control-button" id="search-toggle" type="button" aria-label="بحث" title="بحث">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="control-button cart-button" id="cart-toggle" type="button" aria-label="السلة" title="السلة">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- ! Mobile App Header -->
+        <header class="mobile-header" aria-label="Mobile header">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="فتح القائمة"><i class="fas fa-bars"></i></button>
+            <a class="mobile-brand" href="#home"><img src="image/logo.png" alt="سُفرة"><strong data-ar="سُفرة" data-en="Sufra">سُفرة</strong></a>
+            <button class="control-button cart-button mobile-cart-button" id="mobile-cart-toggle" type="button" aria-label="السلة" title="السلة"><i class="fas fa-shopping-basket"></i><span class="cart-count mobile-cart-count">0</span></button>
+        </header>
+        <div class="mobile-menu-panel" id="mobile-menu-panel" hidden>
+            <nav aria-label="Mobile navigation">
+                <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                <a href="#about" data-ar="عن سُفرة" data-en="About">عن سُفرة</a>
+                <a href="#menu" data-ar="المنيو" data-en="Menu">المنيو</a>
+                <a href="#testimonials" data-ar="الآراء" data-en="Reviews">الآراء</a>
+                <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+                <button id="mobile-theme-toggle" type="button"><i class="fas fa-moon"></i><span data-ar="الوضع الليلي" data-en="Night mode">الوضع الليلي</span></button>
+                <button id="mobile-language-toggle" type="button">العربية / English</button>
+            </nav>
+        </div>
+        <!-- ! Search Panel -->
+        <div class="search-panel" id="search-panel" hidden>
+            <div class="search-box">
+                <div class="search-heading">
+                    <span class="search-heading-icon"><i class="fas fa-search"></i></span>
+                    <div>
+                        <strong data-ar="ابحث في سُفرة" data-en="Search Sufra">ابحث في سُفرة</strong>
+                        <small data-ar="اعثر على ما تبحث عنه بسرعة" data-en="Find what you need quickly">اعثر على ما تبحث عنه بسرعة</small>
+                    </div>
+                </div>
+                <div class="search-field">
+                    <label for="site-search" class="visually-hidden">بحث في الموقع</label>
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input id="site-search" type="search" placeholder="ابحث في الموقع..." autocomplete="off">
+                    <button class="search-clear" id="search-clear" type="button" aria-label="مسح البحث" title="مسح البحث">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- ! Cart Panel -->
+        <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+            <span class="cart-sheet-handle" aria-hidden="true"></span>
+            <div class="cart-header">
+                <div><span class="cart-kicker" data-ar="طلبك" data-en="Your order">طلبك</span><h2 data-ar="سلتك" data-en="Your cart">سلتك</h2></div>
+                <button class="cart-close" id="cart-close" type="button" aria-label="إغلاق السلة"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items"><div class="empty-cart"><span class="empty-cart__icon"><i class="fas fa-basket-shopping"></i></span><strong data-ar="السلة لسه فاضية" data-en="Your cart is empty">السلة لسه فاضية</strong><p data-ar="اختار طبقك المفضل وابدأ طلبك." data-en="Choose your favorite dish and start your order.">اختار طبقك المفضل وابدأ طلبك.</p><a href="#menu" class="empty-cart__link" data-ar="تصفح المنيو" data-en="Browse menu">تصفح المنيو</a></div></div>
+            <div class="cart-footer">
+                <div class="cart-summary"><div><span data-ar="المجموع الفرعي" data-en="Subtotal">المجموع الفرعي</span><strong><span id="cart-subtotal">0</span> <small>ج.م</small></strong></div><div><span data-ar="التوصيل" data-en="Delivery">التوصيل</span><strong><span id="cart-delivery">30</span> <small>ج.م</small></strong></div><div class="cart-total"><span data-ar="الإجمالي" data-en="Total">الإجمالي</span><strong><span id="cart-total">0</span> <small>ج.م</small></strong></div></div>
+                <button class="checkout-button" id="checkout-button" type="button" disabled><i class="fas fa-arrow-left"></i> <span data-ar="إتمام الطلب" data-en="Review order">إتمام الطلب</span></button>
+            </div>
+        </aside>
+        <div class="cart-overlay" id="cart-overlay" hidden></div>
+        <div class="order-success" id="order-success" role="status" aria-live="polite" hidden>
+            <span><i class="fas fa-check"></i></span>
+            <div><strong data-ar="تم تأكيد طلبك" data-en="Order confirmed">تم تأكيد طلبك</strong><small data-ar="شكرًا لاختيارك سُفرة" data-en="Thank you for choosing Sufra">شكرًا لاختيارك سُفرة</small></div>
+        </div>
+        <!-- ! Home section -->
+        <section id="home" class="section">
+            <img src="image/home-night.png" data-night="image/home-night.png" data-day="image/home-day%20.png" alt="أطباق سُفرة الشهية" class="home-image">
+            <div class="ovarlly"></div>
+            <div class="container home-content">
+                <span class="home-eyebrow" data-ar="مطعم عربي فاخر" data-en="Modern Arabic restaurant">مطعم عربي فاخر</span>
+                <h1 data-ar="سُفرة" data-en="Sufra">سُفرة</h1>
+                <p class="home-tagline" data-ar="طعم جديد... بروح جديدة" data-en="A new taste... with a fresh spirit">طعم جديد... بروح جديدة</p>
+                <p class="home-description" data-ar="أكل مصري وشرقي أصيل، محضر بحب وبمكونات طازجة يوميًا." data-en="Authentic Egyptian and Middle Eastern food, lovingly prepared with fresh ingredients every day.">أكل مصري وشرقي أصيل، محضر بحب وبمكونات طازجة يوميًا.</p>
+                <div class="home-actions">
+                    <a class="btn-primary" href="#contact" data-ar="اطلب الآن" data-en="Order now">اطلب الآن</a>
+                    <a class="btn-secondary" href="#menu" data-ar="شاهد المنيو" data-en="View menu">شاهد المنيو</a>
+                </div>
+            </div>
+        </section>
+        <!--! Stats Section -->
+        <section class="stats-section" aria-label="إحصائيات سُفرة">
+            <div class="container stats-grid">
+                <article class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-star"></i></span>
+                    <div class="stat-value"><span class="counter" data-target="4.9" data-decimals="1">0</span></div>
+                    <span class="stat-label" data-ar="تقييم العملاء" data-en="Customer rating">تقييم العملاء</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-utensils"></i></span>
+                    <div class="stat-value"><span class="stat-prefix">+</span><span class="counter" data-target="50">0</span></div>
+                    <span class="stat-label" data-ar="وجبة متنوعة" data-en="Varied dishes">وجبة متنوعة</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-clock"></i></span>
+                    <div class="stat-value stat-text" data-ar="10 ص — 2 ص" data-en="10 AM — 2 AM">10 ص — 2 ص</div>
+                    <span class="stat-label" data-ar="يوميًا" data-en="Every day">يوميًا</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-motorcycle"></i></span>
+                    <div class="stat-value stat-text" data-ar="توصيل سريع" data-en="Fast delivery">توصيل سريع</div>
+                    <span class="stat-label" data-ar="إلى باب منزلك" data-en="To your doorstep">إلى باب منزلك</span>
+                </article>
+            </div>
+        </section>
+        <!-- ! About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-ar="عن سُفرة" data-en="About Sufra">عن سُفرة</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="image/about-night.png" alt="صورة عن المطعم">
+                        <img src="image/about-day.png" alt="صورة عن المطعم">
+                    </div>
+                    <div class="about-text">
+                        <p data-ar="سُفرة هو مطعم عربي فاخر يقدم أشهى الأطباق المصرية والشرقية. نحن ملتزمون بتقديم تجربة طعام لا تُنسى لعملائنا من خلال استخدام أفضل المكونات الطازجة وتحضير كل وجبة بعناية." data-en="Sufra is a modern Arabic restaurant that offers the finest Egyptian and Middle Eastern dishes. We are committed to providing an unforgettable dining experience for our customers by using the freshest ingredients and preparing each meal with care.">سُفرة هو مطعم عربي فاخر يقدم أشهى الأطباق المصرية والشرقية. نحن ملتزمون بتقديم تجربة طعام لا تُنسى لعملائنا من خلال استخدام أفضل المكونات الطازجة وتحضير كل وجبة بعناية.</p>
+                        <p data-ar="سواء كنت تبحث عن وجبة سريعة أو تجربة طعام فاخرة، فإن سُفرة هو المكان المثالي لك. انضم إلينا واستمتع بأفضل الأطعمة العربية في جو مريح وودود." data-en="Whether you're looking for a quick meal or a fine dining experience, Sufra is the perfect place for you. Join us and enjoy the best Arabic cuisine in a comfortable and friendly atmosphere.">سواء كنت تبحث عن وجبة سريعة أو تجربة طعام فاخرة، فإن سُفرة هو المكان المثالي لك. انضم إلينا واستمتع بأفضل الأطعمة العربية في جو مريح وودود.</p>
+                    </div>
+            </div>    
+        </section>
+        <!-- ! Signature Dish -->
+        <section class="signature-section" id="signature-dish">
+            <div class="signature-ghost-number" aria-hidden="true">01</div>
+            <div class="signature-orbit signature-orbit--one" aria-hidden="true"></div>
+            <div class="signature-orbit signature-orbit--two" aria-hidden="true"></div>
+            <div class="container signature-layout">
+                <div class="signature-copy">
+                    <span class="signature-label">SIGNATURE DISH</span>
+                    <h2 data-ar="طعم يستاهل الحكاية" data-en="A taste worth telling">طعم يستاهل الحكاية</h2>
+                    <p data-ar="مشويات سُفرة المتبلة بعناية، تُحضّر على نار هادئة وتُقدّم بتفاصيل تليق بكل حكاية." data-en="Sufra's carefully seasoned grill, prepared over a gentle flame and served with details worth remembering.">مشويات سُفرة المتبلة بعناية، تُحضّر على نار هادئة وتُقدّم بتفاصيل تليق بكل حكاية.</p>
+                    <div class="signature-meta">
+                        <strong>180 <small data-ar="ج.م" data-en="EGP">ج.م</small></strong>
+                        <a class="signature-cta" href="#menu" data-ar="اطلب الطبق" data-en="Order the dish">اطلب الطبق <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+                <figure class="signature-visual">
+                    <span class="signature-visual__rule" aria-hidden="true"></span>
+                    <img src="image/about-night.png" alt="مشويات سُفرة مع بخار خفيف">
+                    <figcaption data-ar="من نار سُفرة" data-en="From Sufra's flame">من نار سُفرة</figcaption>
+                </figure>
+            </div>
+            <a class="signature-next" href="#menu" data-ar="اكتشف قائمتنا ↓" data-en="Discover our menu ↓">اكتشف قائمتنا ↓</a>
+        </section>
+        <!-- ! Menu Section -->
+        <section id="menu" class="menu-section">
+            <div class="container menu-shell">
+                <div class="menu-hero">
+                    <span class="menu-eyebrow" data-ar="منيو سُفرة" data-en="Sufra's Menu">منيو سُفرة</span>
+                    <h2 data-ar="اختار اللي نفسك فيه" data-en="Choose what you crave">اختار اللي نفسك فيه</h2>
+                    <p data-ar="من قلب المطبخ المصري والعربي... أطباق متحضرة بحب وطعم يستاهل الحكاية." data-en="From the heart of Egyptian and Arabic cuisine... dishes made with love and a taste worth telling.">من قلب المطبخ المصري والعربي... أطباق متحضرة بحب وطعم يستاهل الحكاية.</p>
+                </div>
+                <nav class="category-tabs" aria-label="تصنيفات المنيو">
+                    <button class="category-tab is-active" type="button" data-category="all" data-ar="الكل" data-en="All">الكل</button>
+                    <button class="category-tab" type="button" data-category="grills" data-ar="مشويات" data-en="Grills">مشويات</button>
+                    <button class="category-tab" type="button" data-category="meals" data-ar="وجبات" data-en="Meals">وجبات</button>
+                    <button class="category-tab" type="button" data-category="appetizers" data-ar="مقبلات" data-en="Appetizers">مقبلات</button>
+                    <button class="category-tab" type="button" data-category="salads" data-ar="سلطات" data-en="Salads">سلطات</button>
+                    <button class="category-tab" type="button" data-category="desserts" data-ar="حلويات" data-en="Desserts">حلويات</button>
+                    <button class="category-tab" type="button" data-category="drinks" data-ar="مشروبات" data-en="Drinks">مشروبات</button>
+                </nav>
+                <div class="menu-grid" id="menu-grid"></div>
+                <a class="menu-complete-link" href="#menu" data-ar="شوف المنيو كاملة" data-en="View the full menu">شوف المنيو كاملة <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </section>
+        <!-- ! Most Popular Dishes -->
+        <section class="popular-section" id="popular-dishes">
+            <div class="container popular-shell">
+                <div class="popular-heading">
+                    <span class="popular-eyebrow">MOST POPULAR</span>
+                    <h2 data-ar="أشهر أطباقنا 🔥" data-en="Our most popular dishes 🔥">أشهر أطباقنا 🔥</h2>
+                    <p data-ar="أطباق اختارها ضيوفنا مرة... وطلبوها تاني." data-en="Dishes our guests tried once... then ordered again.">أطباق اختارها ضيوفنا مرة... وطلبوها تاني.</p>
+                </div>
+                <div class="popular-grid" id="popular-grid"></div>
+                <a class="popular-menu-link" href="#menu" data-ar="شوف المنيو كاملة" data-en="View the full menu">شوف المنيو كاملة <i class="fas fa-arrow-left"></i></a>
+                <span class="popular-divider" aria-hidden="true"></span>
+            </div>
+        </section>
+        <!-- ! Reviews Section -->
+        <section class="reviews-section" id="testimonials">
+            <div class="container reviews-shell">
+                <div class="reviews-heading reveal-on-scroll">
+                    <span class="reviews-eyebrow" data-ar="آراء ضيوفنا" data-en="GUEST REVIEWS">آراء ضيوفنا</span>
+                    <h2 data-ar="تجارب تستاهل الحكاية" data-en="Guest Reviews">تجارب تستاهل الحكاية</h2>
+                    <p data-ar="تجارب حقيقية من ضيوفنا... وطعم لا يُنسى." data-en="Real experiences from our guests... unforgettable taste.">تجارب حقيقية من ضيوفنا... وطعم لا يُنسى.</p>
+                </div>
+                <div class="reviews-layout">
+                    <aside class="review-summary reveal-on-scroll">
+                        <span class="summary-label" data-ar="متوسط تقييم ضيوفنا" data-en="Our guest rating">متوسط تقييم ضيوفنا</span>
+                        <strong>4.9 <small>/ 5</small></strong>
+                        <span class="summary-stars" aria-label="5 stars">★★★★★</span>
+                        <p data-ar="تقييم أكثر من 500 عميل" data-en="Rated by 500+ happy guests">تقييم أكثر من 500 عميل</p>
+                    </aside>
+                    <div class="reviews-slider-wrap">
+                        <div class="reviews-viewport" aria-live="polite">
+                            <div class="reviews-track" id="reviews-track">
+                                <article class="review-card">
+                                    <span class="review-quote" aria-hidden="true">“</span>
+                                    <div class="review-card__person"><div class="review-avatar">أم</div><div><h3 data-ar="أحمد محمد" data-en="Ahmed Mohamed">أحمد محمد</h3><span class="review-stars">★★★★★</span></div></div>
+                                    <p data-ar="الأكل ممتاز جدًا والطعم فعلاً مختلف، خصوصًا المشويات. تجربة تستحق التكرار." data-en="The food is excellent and truly different, especially the grills. An experience worth repeating.">الأكل ممتاز جدًا والطعم فعلاً مختلف، خصوصًا المشويات. تجربة تستحق التكرار.</p>
+                                    <time data-ar="منذ 3 أيام" data-en="3 days ago">منذ 3 أيام</time>
+                                </article>
+                                <article class="review-card">
+                                    <span class="review-quote" aria-hidden="true">“</span>
+                                    <div class="review-card__person"><div class="review-avatar">سم</div><div><h3 data-ar="سارة محمود" data-en="Sara Mahmoud">سارة محمود</h3><span class="review-stars">★★★★★</span></div></div>
+                                    <p data-ar="المكان جميل جدًا، والأكل وصل سخن والتقديم ممتاز." data-en="The place is beautiful, the food arrived hot, and the presentation was excellent.">المكان جميل جدًا، والأكل وصل سخن والتقديم ممتاز.</p>
+                                    <time data-ar="منذ 5 أيام" data-en="5 days ago">منذ 5 أيام</time>
+                                </article>
+                                <article class="review-card">
+                                    <span class="review-quote" aria-hidden="true">“</span>
+                                    <div class="review-card__person"><div class="review-avatar">مخ</div><div><h3 data-ar="محمد خالد" data-en="Mohamed Khaled">محمد خالد</h3><span class="review-stars">★★★★☆</span></div></div>
+                                    <p data-ar="جربت ميكس جريل وفتة اللحمة، الاتنين كانوا ممتازين جدًا." data-en="I tried the mixed grill and meat fatta; both were absolutely excellent.">جربت ميكس جريل وفتة اللحمة، الاتنين كانوا ممتازين جدًا.</p>
+                                    <time data-ar="منذ أسبوع" data-en="a week ago">منذ أسبوع</time>
+                                </article>
+                                <article class="review-card">
+                                    <span class="review-quote" aria-hidden="true">“</span>
+                                    <div class="review-card__person"><div class="review-avatar">نع</div><div><h3 data-ar="نورهان علي" data-en="Norhan Ali">نورهان علي</h3><span class="review-stars">★★★★★</span></div></div>
+                                    <p data-ar="من أفضل المطاعم اللي جربتها، خصوصًا الكنافة وأم علي." data-en="One of the best restaurants I have tried, especially the kunafa and Om Ali.">من أفضل المطاعم اللي جربتها، خصوصًا الكنافة وأم علي.</p>
+                                    <time data-ar="منذ أسبوعين" data-en="2 weeks ago">منذ أسبوعين</time>
+                                </article>
+                                <article class="review-card">
+                                    <span class="review-quote" aria-hidden="true">“</span>
+                                    <div class="review-card__person"><div class="review-avatar">عح</div><div><h3 data-ar="عمر حسن" data-en="Omar Hassan">عمر حسن</h3><span class="review-stars">★★★★★</span></div></div>
+                                    <p data-ar="الخدمة سريعة جدًا والأكل طازج والطعم ممتاز." data-en="The service is very fast, the food is fresh, and the taste is excellent.">الخدمة سريعة جدًا والأكل طازج والطعم ممتاز.</p>
+                                    <time data-ar="منذ 3 أسابيع" data-en="3 weeks ago">منذ 3 أسابيع</time>
+                                </article>
+                                <article class="review-card">
+                                    <span class="review-quote" aria-hidden="true">“</span>
+                                    <div class="review-card__person"><div class="review-avatar">مأ</div><div><h3 data-ar="مريم أحمد" data-en="Mariam Ahmed">مريم أحمد</h3><span class="review-stars">★★★★★</span></div></div>
+                                    <p data-ar="تجربة جميلة من أول الطلب لحد آخر لقمة." data-en="A beautiful experience from the first order to the last bite.">تجربة جميلة من أول الطلب لحد آخر لقمة.</p>
+                                    <time data-ar="منذ شهر" data-en="a month ago">منذ شهر</time>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="review-controls">
+                            <button class="review-arrow review-arrow--next" id="reviews-next" type="button" aria-label="الرأي التالي"><i class="fas fa-arrow-right"></i></button>
+                            <div class="review-dots" id="review-dots" aria-hidden="true"></div>
+                            <button class="review-arrow review-arrow--prev" id="reviews-prev" type="button" aria-label="الرأي السابق"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ! Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-shell">
+                <div class="contact-heading reveal-on-scroll">
+                    <span class="contact-eyebrow" data-ar="تواصل مع سُفرة" data-en="GET IN TOUCH">تواصل مع سُفرة</span>
+                    <h2 data-ar="خلّي سُفرة أقرب ليك" data-en="Let Sufrah Come Closer">خلّي سُفرة أقرب ليك</h2>
+                    <p data-ar="عندك سؤال؟ عايز تطلب؟ أو حابب تعرف أقرب فرع ليك؟ إحنا هنا عشانك." data-en="Have a question, want to order, or looking for our nearest branch? We're here for you.">عندك سؤال؟ عايز تطلب؟ أو حابب تعرف أقرب فرع ليك؟ إحنا هنا عشانك.</p>
+                </div>
+                <div class="contact-info-grid">
+                    <article class="contact-info-card"><i class="fas fa-location-dot"></i><div><strong data-ar="الموقع" data-en="Location">الموقع</strong><span data-ar="المنصورة، مصر" data-en="Mansoura, Egypt">المنصورة، مصر</span></div></article>
+                    <article class="contact-info-card"><i class="fas fa-phone"></i><div><strong data-ar="الهاتف" data-en="Phone">الهاتف</strong><span>+20 100 000 0000</span></div></article>
+                    <article class="contact-info-card"><i class="fas fa-clock"></i><div><strong data-ar="مواعيد العمل" data-en="Opening hours">مواعيد العمل</strong><span data-ar="يوميًا من 10 صباحًا إلى 2 صباحًا" data-en="Daily — 10 AM to 2 AM">يوميًا من 10 صباحًا إلى 2 صباحًا</span></div></article>
+                    <article class="contact-info-card"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span data-ar="تواصل معنا على واتساب" data-en="Chat with us on WhatsApp">تواصل معنا على واتساب</span></div></article>
+                </div>
+                <div class="contact-main">
+                    <form class="contact-form reveal-on-scroll" id="contact-form">
+                        <div class="form-heading"><span data-ar="رسالتك تهمنا" data-en="Your message matters">رسالتك تهمنا</span><h3 data-ar="اترك لنا رسالة" data-en="Leave us a message">اترك لنا رسالة</h3></div>
+                        <label><span data-ar="الاسم" data-en="Name">الاسم</span><input type="text" name="name" required placeholder="اكتب اسمك" data-placeholder-ar="اكتب اسمك" data-placeholder-en="Your name"></label>
+                        <label><span data-ar="البريد الإلكتروني" data-en="Email address">البريد الإلكتروني</span><input type="email" name="email" required placeholder="example@email.com"></label>
+                        <label><span data-ar="رقم الهاتف" data-en="Phone number">رقم الهاتف</span><input type="tel" name="phone" placeholder="01XXXXXXXXX"></label>
+                        <label><span data-ar="الرسالة" data-en="Message">الرسالة</span><textarea name="message" required rows="4" placeholder="اكتب رسالتك هنا..." data-placeholder-ar="اكتب رسالتك هنا..." data-placeholder-en="Write your message..."></textarea></label>
+                        <button class="contact-submit" type="submit"><span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span><i class="fas fa-arrow-left"></i></button>
+                        <div class="contact-success" id="contact-success" role="status" aria-live="polite" hidden><i class="fas fa-check"></i><div><strong data-ar="تم إرسال رسالتك بنجاح" data-en="Your message was sent successfully">تم إرسال رسالتك بنجاح</strong><span data-ar="شكرًا لتواصلك مع سُفرة، هنرد عليك قريبًا." data-en="Thank you for contacting Sufra, we will get back to you soon.">شكرًا لتواصلك مع سُفرة، هنرد عليك قريبًا.</span></div></div>
+                    </form>
+                    <div class="map-preview reveal-on-scroll" role="img" aria-label="خريطة موقع سُفرة في المنصورة">
+                        <div class="map-grid-lines"></div><span class="map-road map-road--one"></span><span class="map-road map-road--two"></span><span class="map-road map-road--three"></span><div class="map-pin"><i class="fas fa-location-dot"></i><strong data-ar="سُفرة — المنصورة" data-en="Sufra — Mansoura">سُفرة — المنصورة</strong></div><a href="https://maps.google.com/?q=Mansoura,Egypt" target="_blank" rel="noreferrer" class="map-link"><span data-ar="افتح الخريطة" data-en="Open Map">افتح الخريطة</span><i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="social-links" aria-label="Social media"><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div>
+            </div>
+        </section>
+        <!-- ! Footer -->
+        <footer class="site-footer">
+            <div class="container footer-shell">
+                <div class="footer-brand"><div class="footer-logo"><img src="image/logo.png" alt="سُفرة"><strong data-ar="سُفرة" data-en="Sufra">سُفرة</strong></div><p data-ar="طعم البيت... بروح جديدة." data-en="Homestyle taste... with a modern soul.">طعم البيت... بروح جديدة.</p><div class="footer-controls"><button class="control-button footer-theme-toggle" id="footer-theme-toggle" type="button" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button><button class="footer-language" id="footer-language-toggle" type="button">العربية | English</button></div></div>
+                <div class="footer-column"><h3 data-ar="سُفرة" data-en="Sufra">سُفرة</h3><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="#about" data-ar="عن سُفرة" data-en="About">عن سُفرة</a><a href="#menu" data-ar="المنيو" data-en="Menu">المنيو</a><a href="#popular-dishes" data-ar="أشهر الأطباق" data-en="Popular">أشهر الأطباق</a><a href="#testimonials" data-ar="آراء العملاء" data-en="Reviews">آراء العملاء</a><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></div>
+                <div class="footer-column"><h3 data-ar="المنيو" data-en="Menu">المنيو</h3><a href="#menu" data-ar="مشويات" data-en="Grills">مشويات</a><a href="#menu" data-ar="وجبات" data-en="Meals">وجبات</a><a href="#menu" data-ar="مقبلات" data-en="Appetizers">مقبلات</a><a href="#menu" data-ar="سلطات" data-en="Salads">سلطات</a><a href="#menu" data-ar="حلويات" data-en="Desserts">حلويات</a><a href="#menu" data-ar="مشروبات" data-en="Drinks">مشروبات</a></div>
+                <div class="footer-column footer-contact"><h3 data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</h3><span><i class="fas fa-location-dot"></i> <span data-ar="المنصورة، مصر" data-en="Mansoura, Egypt">المنصورة، مصر</span></span><span><i class="fas fa-phone"></i> +20 100 000 0000</span><span><i class="fas fa-clock"></i> <span data-ar="يوميًا 10 ص — 2 ص" data-en="Daily 10 AM — 2 AM">يوميًا 10 ص — 2 ص</span></span></div>
+                <div class="footer-newsletter"><h3 data-ar="خليك أول واحد يعرف عروض سُفرة" data-en="Be the first to know our latest offers">خليك أول واحد يعرف عروض سُفرة</h3><form id="newsletter-form"><input type="email" required placeholder="البريد الإلكتروني" data-placeholder-ar="البريد الإلكتروني" data-placeholder-en="Email address"><button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-left"></i><span data-ar="اشترك" data-en="Subscribe">اشترك</span></button></form><small id="newsletter-status" hidden data-ar="تم الاشتراك بنجاح" data-en="You are subscribed">تم الاشتراك بنجاح</small></div>
+            </div>
+            <div class="container footer-bottom"><span>© 2026 Sufrah Restaurant. All Rights Reserved.</span><div><a href="#" data-ar="Privacy Policy" data-en="Privacy Policy">Privacy Policy</a><a href="#" data-ar="Terms & Conditions" data-en="Terms & Conditions">Terms & Conditions</a></div></div>
+        </footer>
+        <!-- ! Mobile Bottom Navigation -->
+        <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile app navigation">
+            <a class="mobile-nav-item is-active" href="#home" data-section="home"><i class="fas fa-house"></i><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
+            <a class="mobile-nav-item" href="#menu" data-section="menu"><i class="fas fa-utensils"></i><span data-ar="المنيو" data-en="Menu">المنيو</span></a>
+            <button class="mobile-nav-item mobile-nav-cart" id="mobile-bottom-cart" type="button"><i class="fas fa-shopping-basket"></i><span class="cart-count mobile-bottom-count">0</span><span data-ar="السلة" data-en="Cart">السلة</span></button>
+            <a class="mobile-nav-item" href="#popular-dishes" data-section="popular-dishes"><i class="far fa-heart"></i><span data-ar="المفضلة" data-en="Favorites">المفضلة</span></a>
+            <button class="mobile-nav-item" id="mobile-more-toggle" type="button"><i class="fas fa-ellipsis"></i><span data-ar="المزيد" data-en="More">المزيد</span></button>
+        </nav>
+        <!--! Product Modal -->
+        <div class="product-modal" id="product-modal" hidden>
+            <div class="product-modal__backdrop" data-close-modal></div>
+            <div class="product-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-product-name">
+                <button class="product-modal__close" type="button" aria-label="إغلاق" data-close-modal><i class="fas fa-times"></i></button>
+                <div class="product-modal__image"><img id="modal-product-image" src="" alt=""></div>
+                <div class="product-modal__content">
+                    <span class="modal-product-category" id="modal-product-category"></span>
+                    <h2 id="modal-product-name"></h2>
+                    <p id="modal-product-description"></p>
+                    <div class="modal-rating" id="modal-product-rating"></div>
+                    <div class="modal-options">
+                        <h3 data-ar="اختر الحجم" data-en="Choose size">اختر الحجم</h3>
+                        <div class="size-options">
+                            <label><input type="radio" name="product-size" value="0" checked> <span>Single</span></label>
+                            <label><input type="radio" name="product-size" value="35"> <span>Double <small>+35 ج.م</small></span></label>
+                        </div>
+                        <h3 data-ar="إضافات" data-en="Additions">إضافات</h3>
+                        <div class="extra-options">
+                            <label><input type="checkbox" value="20"> جبنة <small>+20 ج.م</small></label>
+                            <label><input type="checkbox" value="25"> مشروم <small>+25 ج.م</small></label>
+                            <label><input type="checkbox" value="35"> بطاطس <small>+35 ج.م</small></label>
+                            <label><input type="checkbox" value="15"> صوص سُفرة <small>+15 ج.م</small></label>
+                        </div>
+                    </div>
+                    <div class="modal-purchase">
+                        <div class="quantity-control"><button type="button" data-quantity="-1">-</button><span id="modal-quantity">1</span><button type="button" data-quantity="1">+</button></div>
+                        <strong><span id="modal-total">0</span> <small>ج.م</small></strong>
+                    </div>
+                    <button class="modal-add-button" id="modal-add-button" type="button"><i class="fas fa-shopping-basket"></i> <span data-ar="أضف للسلة" data-en="Add to cart">أضف للسلة</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="Js/theme.js"></script>
+        <script src="Js/responsive.js"></script>
+        <script src="Js/main.js"></script>
+    </body>
+</html>

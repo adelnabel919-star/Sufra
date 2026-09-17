@@ -1,0 +1,25 @@
+body.theme-light {
+    --page-bg: #E8D2B0;
+    --surface: rgba(240, 220, 186, 0.94);
+    --surface-strong: #E2C9A3;
+    --text-main: #2B1B12;
+    --text-muted: #6A4932;
+    --border-soft: rgba(112, 69, 31, 0.28);
+    --accent: #C88A3D;
+    --accent-2: #70451F;
+    --shadow: rgba(43, 27, 18, 0.24);
+    --background-glow: rgba(138, 87, 40, 0.2);
+    --hero-overlay: linear-gradient(360deg, rgba(56, 32, 18, 0.68), rgba(245, 230, 204, 0.34) 52%, rgba(245, 230, 204, 0.1));
+    --hero-glow: rgba(200, 138, 61, 0.24);
+    --hero-heading: #2B1B12;
+    --hero-copy: #6A4932;
+    --hero-curve: #E2C9A3;
+    --hero-accent-text: #70451F;
+    --hero-accent-line: #8A5728;
+    --stats-bg: #F5E6CC;
+    --stats-card: #FFFFFF;
+    --stats-border: #E8D7BF;
+    --stats-number: #B8792E;
+    --stats-heading: #2B1B14;
+    --stats-copy: #765E49;
+}
